@@ -1,0 +1,160 @@
+.product-navigator {
+    position: absolute;
+}
+.product-navigator > a {
+    display: inline-block;
+    font-size: 16px;
+}
+.product-navigator #newer-nav,
+.product-navigator #older-nav {
+    background: rgba(0, 0, 0, 0.56);
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    height: 85px;
+    width: 220px;
+    line-height: 19px;
+    position: fixed;
+    top: 50%;
+    z-index: 100;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+.product-navigator #newer-nav {
+    border-top-left-radius: 0.4em;
+    border-bottom-left-radius: 0.4em;
+    right: -190px;
+}
+.product-navigator #newer-nav:hover {
+    background: #212121;
+    right: 0;
+}
+.product-navigator #older-nav {
+    border-top-right-radius: 0.4em;
+    border-bottom-right-radius: 0.4em;
+    left: -190px;
+}
+.product-navigator #older-nav:hover {
+    background: #212121;
+    left: 0;
+}
+.product-navigator #newer-nav:before,
+.product-navigator #older-nav:after {
+    display: inline-block;
+    line-height: 100px;
+    float: left;
+    width: 30px;
+    text-align: center;
+    font-family: "Ionicons";
+    speak: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+.product-navigator #newer-nav:before {
+    content: url('/wp-content/plugins/wp-nextprev-product-navigator/images/right-arrow.png');
+}
+.product-navigator #older-nav:after {
+    content: url('/wp-content/plugins/wp-nextprev-product-navigator/images/left-arrow.png');
+}
+.product-navigator .nav-image {
+    float: left;
+    display: inline-block;
+    width: 90px;
+}
+.product-navigator #newer-nav .nav-image {
+    float: right;
+}
+.product-navigator .wp-post-image,
+.product-navigator .avatar {
+    width: 70px;
+    border-radius: 10%;
+    margin: 10px;
+}
+.product-navigator .outter-title {
+    /*display: table;*/
+    
+    display: table;
+    float: left;
+    height: 90px;
+    width: 100px;
+}
+.product-navigator #newer-nav .outter-title {} .product-navigator .entry-title {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 100px;
+}
+@media only screen and (max-width: 48em) {
+    .product-navigator {
+        background: #212121 !important;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        position: fixed;
+        width: 100%;
+        z-index: 200;
+    }
+    .product-navigator #newer-nav:before,
+    .product-navigator #older-nav:after {
+        line-height: 50px;
+    }
+    .product-navigator #older-nav:after {
+        position: absolute;
+        right: 0;
+    }
+    .product-navigator #newer-nav,
+    .product-navigator #older-nav,
+    .product-navigator.member-navigation #newer-nav,
+    .product-navigator.member-navigation #older-nav {
+        /*background: rgba(0, 0, 0, 0.7);*/
+        
+        background: none;
+        top: auto;
+        bottom: 0;
+        width: 50%;
+        height: 40px;
+        border-radius: 0;
+    }
+    .product-navigator #newer-nav,
+    .product-navigator.member-navigation #newer-nav {
+        right: 0;
+    }
+    .product-navigator #older-nav,
+    .product-navigator.member-navigation #older-nav {
+        left: 0;
+    }
+    .product-navigator .nav-image {
+        width: 40px;
+    }
+    .product-navigator .wp-post-image,
+    .product-navigator .avatar {
+        width: 30px;
+        border-radius: 10%;
+        margin: 5px;
+    }
+    .product-navigator .outter-title {
+        height: 30px;
+    }
+    .product-navigator .entry-title {
+        display: block;
+        white-space: nowrap;
+        line-height: 40px;
+        font-size: 11px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 7em;
+    }
+    .product-navigator.member-navigation #older-nav .outter-title {
+        width: 100%;
+        padding-right: 30px;
+    }
+    .product-navigator.member-navigation .entry-title {
+        width: 100%;
+    }
+    .product-navigator #older-nav,
+    .product-navigator.member-navigation #older-nav {
+        left: 0;
+        border-right: 2px solid #2b2b2b;
+    }
+}
